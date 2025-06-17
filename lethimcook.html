@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khóa học Vật Lý – Cô Bích Ngọc</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-light:#f4f8ff;
+      --bg-dark:#1e2746;
+      --card-light:#ffffff;
+      --card-dark:#29335c;
+      --text-light:#1e2746;
+      --text-dark:#e6ecff;
+      --accent:#2d9cdb;
+      --radius:18px;
+      --shadow:0 8px 18px rgba(0,0,0,.1);
+    }
+
+    /* ---------- RESET ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Poppins",sans-serif;
+      background:var(--bg-light);
+      color:var(--text-light);
+      transition:.4s ease;
+      line-height:1.55;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    h1,h2,h3{font-weight:600}
+    a{color:var(--accent);text-decoration:none}
+
+    /* ---------- LAYOUT ---------- */
+    header{
+      padding:12px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    #wrapper{
+      flex:1;
+      display:flex;
+      flex-wrap:wrap;
+      padding:24px;
+      gap:24px;
+    }
+    #course-info{
+      flex:1 1 360px;
+      background:var(--card-light);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:32px 28px;
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+      animation:fadeIn .6s ease;
+    }
+    #teacher-section{
+      flex:0 1 300px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+    #teacher-img{
+      width:100%;
+      aspect-ratio:3/4;
+      background:url('https://i.postimg.cc/wjQPBfZc/z6714875601830-039570189416dbd93e4babead237c0e3.jpg') center/cover;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition:transform .3s ease;
+    }
+    #teacher-img:hover{transform:translateY(-4px)}
+    #teacher-bio{
+      width:100%;
+      background:var(--card-light);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      display:none;
+      animation:fadeIn .4s ease;
+    }
+
+    /* ---------- COURSE CARDS ---------- */
+    .badge-box{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{
+      padding:6px 12px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:999px;
+      font-size:.85rem;
+    }
+    .course{
+      background:var(--card-light);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      position:relative;
+    }
+    .course h3{font-size:1.1rem}
+    .details{
+      display:none;
+      font-size:.9rem;
+      animation:fadeIn .35s ease;
+    }
+    .toggle-btn{
+      align-self:flex-start;
+      background:none;
+      border:none;
+      color:var(--accent);
+      cursor:pointer;
+      font-weight:600;
+      font-size:.9rem;
+    }
+
+    /* ---------- THEME SWITCH ---------- */
+    #theme-switch{
+      width:48px;height:24px;
+      border-radius:999px;
+      background:var(--accent);
+      position:relative;
+      cursor:pointer;
+      transition:.4s ease;
+    }
+    #theme-switch::after{
+      content:'';
+      position:absolute;
+      top:2px;left:2px;
+      width:20px;height:20px;
+      border-radius:50%;
+      background:#fff;
+      transition:.4s ease;
+    }
+    body.dark{
+      background:var(--bg-dark);
+      color:var(--text-dark);
+    }
+    body.dark #course-info,
+    body.dark .course,
+    body.dark #teacher-bio{
+      background:var(--card-dark);
+    }
+    body.dark #theme-switch{background:#fff}
+    body.dark #theme-switch::after{left:26px;background:var(--accent)}
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Khóa học Vật Lý ⭐</h1>
+    <div id="theme-switch" title="Chuyển giao diện"></div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="wrapper">
+    <!-- LEFT: COURSES & TRUST -->
+    <section id="course-info">
+      <h2>Vì sao bạn nên học?</h2>
+      <div class="badge-box">
+        <div class="badge">15+ năm kinh nghiệm</div>
+        <div class="badge">Hơn  600 học viên</div>
+        <div class="badge">98% hài lòng</div>
+        <div class="badge">Giảng viên ưu tú,kinh nghiệm và nhiệt huyết</div>
+         <div class="badge">Dạy học từ cơ bản đến nâng cao,tận tâm và nhiệt tính</div>
+      </div>
+
+      <h2>Khóa học nổi bật</h2>
+
+      <article class="course">
+        <h3>vật lý  10 – Nền tảng cơ bản</h3>
+        <p>Tập trung vào cơ học và nhiệt học .</p>
+        <p>khai giảng 01/07/2025</p>
+           <p>thời gian: 19h30-21h00_thứ 3,5,7 .</p>
+        <button class="toggle-btn">Xem chi tiết ▾</button>
+        <div class="details">
+          <ul>
+            <li>Thời lượng: 90 phút</li>
+            <li>Bài tập thực hành + đáp án</li>
+            <li>Thi thử & chấm điểm </li>
+            <li>Hỗ trợ hỏi đáp 24/7</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="course">
+        <h3>vật lý 11 – Chuyển tiếp & Mở rộng</h3>
+        <p>Nghiên cứu dao động, sóng và điện từ cơ bản .</p>
+        <p>khai giảng 17/06/2025</p>
+        <p>thời gian: 17h30-19h00_thứ 3,5,7 </p>
+        <button class="toggle-btn">Xem chi tiết ▾</button>
+        <div class="details">
+          <ul>
+             <li>Thời lượng: 90 phút</li>
+            <li>Bài tập thực hành + đáp án</li>
+            <li>Thi thử & chấm điểm </li>
+            <li>Hỗ trợ hỏi đáp 24/7</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="course">
+        <h3>vật lý 12 - Nâng cao & Định hướngg</h3>
+        <p> Tiếp cận quang học và vật lí hạt nhân.</p>
+        <p>khai giảng 16/06/2025</p>
+        <p>thời gian:-Lý 12A 17h30-19h00_thứ 2,4,6 </p>
+         <p>-Lý 12B 19h30-21h00_thứ 2,4,6</p>
+        <button class="toggle-btn">Xem chi tiết ▾</button>
+        <div class="details">
+          <ul>
+            <li>Thời lượng: 90 phút</li>
+            <li>Bài tập thực hành + đáp án</li>
+            <li>Thi thử & chấm điểm </li>
+            <li>Hỗ trợ hỏi đáp 24/7</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- RIGHT: TEACHER -->
+    <section id="teacher-section">
+      <div id="teacher-img" title="Nhấp để xem tiểu sử"></div>
+      <div id="teacher-bio">
+        <h2>Cô Huỳnh Bích Ngọc</h2>
+        <p>• Tiến sĩ Vật Lý, Đại Học sư phạm </p>
+        <p>• 200+ học sinh đạt thành tích cao trong học tập</p>
+        <p>• nhận được nhiều tin tưởng từ phụ huynh và học sinh trong quá trình giảng dạy của mình</p>
+        <p><strong>Triết lý giảng dạy:</strong> “Học Vật Lý là khám phá thế giới bằng tư duy minh bạch và niềm say mê.”</p>
+        <p><a href="#course-info">Đăng ký khóa học ngay → xin liên hệ 0935.764.311</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:12px;font-size:.85rem">
+    © 2025 Vật Lý Bích Ngọc.| địa chỉ: 557 trần Cao Vân, Thanh Khê | 170 Thế Lữ, Sơn Trà, Đà Nẵng
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ------- Teacher bio toggle -------
+    const teacherImg = document.getElementById('teacher-img');
+    const teacherBio = document.getElementById('teacher-bio');
+    teacherImg.addEventListener('click',()=>teacherBio.style.display = teacherBio.style.display==='block' ? 'none':'block');
+
+    // ------- Course detail toggle -------
+    document.querySelectorAll('.course').forEach(card=>{
+      const btn = card.querySelector('.toggle-btn');
+      const details = card.querySelector('.details');
+      btn.addEventListener('click',()=>{
+        const isOpen = details.style.display==='block';
+        details.style.display = isOpen ? 'none':'block';
+        btn.textContent = isOpen ? 'Xem chi tiết ▾':'Thu gọn ▴';
+      });
+    });
+
+    // ------- Theme switch -------
+    const switcher=document.getElementById('theme-switch');
+    switcher.addEventListener('click',()=>{
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
